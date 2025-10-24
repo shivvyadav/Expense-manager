@@ -1,0 +1,91 @@
+@import "tailwindcss";
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 🎨 Light Mode */
+  --background:oklch(98.5% 0 0);
+  --foreground: #ffffff; 
+  --primary: oklch(20.5% 0 0);
+  --secondary: oklch(43.9% 0 0);
+  --green: oklch(72.3% 0.219 149.579);
+  --purple: oklch(62.7% 0.265 303.9);
+  --red: oklch(63.7% 0.237 25.331);
+  --border: oklch(92.2% 0 0);
+}
+
+.dark {
+  /* 🌙 Dark Mode */
+  --background:oklch(20.5% 0 0);
+  --foreground: oklch(26.9% 0 0);
+  --primary: #ffffff; 
+  --secondary:oklch(70.8% 0 0);
+  --green: oklch(79.2% 0.209 151.711);
+  --purple: oklch(71.4% 0.203 305.504);
+  --red: oklch(70.4% 0.191 22.216);
+  --border: oklch(37.1% 0 0);
+}
+
+/* Custom utility classes */
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-foreground {
+  background-color: var(--foreground);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.text-purple {
+  color: var(--purple);
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.border-border {
+  border-color: var(--border);
+}
+
+.fill-primary {
+  fill: var(--primary);
+}
+
+.fill-secondary {
+  fill: var(--secondary);
+}
+
+@layer components {
+  .btn {
+    @apply rounded-lg px-4 py-2 font-medium transition;
+    background-color: var(--green);
+    color: #fff;
+  }
+
+  .btn:hover {
+    background-color: var(--purple);
+  }
+
+  .card {
+    @apply rounded-2xl border p-6 transition;
+    background-color: var(--foreground);
+    border-color: var(--border);
+    color: var(--primary);
+  }
+}
+
